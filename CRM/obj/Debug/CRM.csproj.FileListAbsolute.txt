@@ -1,0 +1,17 @@
+C:\Users\DenisPavlovich\AppData\Local\Temporary Projects\CRM\bin\Debug\CRM.exe.config
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.exe.config
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.exe
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.pdb
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Data.dll
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Inf.dll
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Model.dll
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\EntityFramework.dll
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\EntityFramework.SqlServer.dll
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Data.pdb
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Inf.pdb
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\CRM.Model.pdb
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\EntityFramework.xml
+D:\КУРСЫ\GIT\C#\CRM\CRM\bin\Debug\EntityFramework.SqlServer.xml
+D:\КУРСЫ\GIT\C#\CRM\CRM\obj\Debug\CRM.csprojResolveAssemblyReference.cache
+D:\КУРСЫ\GIT\C#\CRM\CRM\obj\Debug\CRM.exe
+D:\КУРСЫ\GIT\C#\CRM\CRM\obj\Debug\CRM.pdb
