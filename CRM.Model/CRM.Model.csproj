@@ -43,6 +43,7 @@
     <Compile Include="Domain\Manager.cs" />
     <Compile Include="Domain\Organization.cs" />
     <Compile Include="Domain\PhoneNumber.cs" />
+    <Compile Include="Interfaces\IBroMessagerMQ.cs" />
     <Compile Include="Interfaces\IClientREpository.cs" />
     <Compile Include="Interfaces\IManagerRepository.cs" />
     <Compile Include="Interfaces\IOrganizationRepository.cs" />

@@ -1,0 +1,11 @@
+CRM.Data/bin
+CRM.Data/obj
+CRM.Inf/bin
+CRM.Inf/obj
+CRM.Inf/App.config
+CRM.Inf/packages.config
+CRM.Model/bin
+CRM.Model/obj
+CRM/CRM.csproj.user
+CRM/bin
+CRM/obj
