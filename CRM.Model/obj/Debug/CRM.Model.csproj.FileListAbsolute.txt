@@ -1,7 +1,0 @@
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\bin\Debug\CRM.Model.dll
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\bin\Debug\CRM.Model.pdb
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\bin\Debug\CRM.Data.dll
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\bin\Debug\CRM.Data.pdb
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\obj\Debug\CRM.Model.csprojResolveAssemblyReference.cache
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\obj\Debug\CRM.Model.dll
-D:\КУРСЫ\GIT\C#\CRM\CRM.Model\obj\Debug\CRM.Model.pdb
