@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace CRM.Data.Dto
 {
-    public class Client
+    public class Client : Dto
     {
-        public int Id { get; set; }
-
         public int PhoneId { get; set; }
         public virtual PhoneNumber PhoneNumber { get; set; }
 

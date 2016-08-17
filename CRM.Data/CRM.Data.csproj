@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\Client.cs" />
+    <Compile Include="Dto\Dto.cs" />
     <Compile Include="Dto\Manager.cs" />
     <Compile Include="Dto\Organization.cs" />
     <Compile Include="Dto\PhoneNumber.cs" />

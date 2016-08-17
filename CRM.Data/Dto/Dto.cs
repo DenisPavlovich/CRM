@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CRM.Data.Dto
 {
-    public class Manager : Dto
+    public abstract class Dto
     {
-        public string Name { get; set; }
-        public string Role { get; set; }
+        public int Id { get; private set; }
     }
 }
