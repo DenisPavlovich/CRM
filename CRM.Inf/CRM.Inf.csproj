@@ -46,13 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryFiles\ClientRepository.cs" />
+    <Compile Include="RepositoryFiles\RepositoryEntity\ClientRepository.cs" />
     <Compile Include="RepositoryFiles\DataBaseContext.cs" />
-    <Compile Include="RepositoryFiles\ManagerRepository.cs" />
-    <Compile Include="RepositoryFiles\OrganizationRepository.cs" />
-    <Compile Include="RepositoryFiles\PhoneRepository.cs" />
+    <Compile Include="RepositoryFiles\RepositoryEntity\ManagerRepository.cs" />
+    <Compile Include="RepositoryFiles\RepositoryEntity\OrganizationRepository.cs" />
+    <Compile Include="RepositoryFiles\RepositoryEntity\PhoneRepository.cs" />
     <Compile Include="RepositoryFiles\Repository.cs" />
     <Compile Include="RepositoryUnit.cs" />
   </ItemGroup>

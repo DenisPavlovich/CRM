@@ -16,12 +16,21 @@ namespace CRM.Inf.RepositoryFiles
 
         public Repository(DbContext context)
         {
+            if (context == null)
+                throw new NullReferenceException();
             Context = context;
         }
 
         public TEntity Get(int id)
         {
-            return Context.Set<TEntity>().Find(id);
+            try
+            {
+                return Context.Set<TEntity>().Find(id);
+            }
+            catch
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -46,12 +55,26 @@ namespace CRM.Inf.RepositoryFiles
 
         public void Remove(TEntity entity)
         {
-            Context.Set<TEntity>().Remove(entity);
+            try
+            {
+                Context.Set<TEntity>().Remove(entity);
+            }
+            catch
+            {
+                throw new ArgumentNullException();
+            }
         }
 
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            Context.Set<TEntity>().RemoveRange(entities);
+            try
+            {
+                Context.Set<TEntity>().RemoveRange(entities);
+            }
+            catch
+            {
+                throw new ArgumentNullException();
+            }
         }
     }
 }
