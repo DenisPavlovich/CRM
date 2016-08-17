@@ -15,12 +15,12 @@ namespace CRM
         {
             using (var unit = new RepositoryUnit(new DataBaseContext()))
             {
-                unit.Phones.Add(new PhoneNumber(){Number = "380931399390"});
-                unit.Complete();
-                var phones = unit.Phones.GetAll();
-                foreach (var phone in phones)
+                //unit.Phones.Add(new PhoneNumber(){Number = "380931399390"});
+                //unit.Complete();
+                var phone = unit.Phones.GetAll();
+                foreach (var number in phone)
                 {
-                    Console.WriteLine(phone.Number);
+                    Console.WriteLine(number.Number);
                 }
             }
         }

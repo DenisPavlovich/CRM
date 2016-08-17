@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Dto\Client.cs" />
     <Compile Include="Dto\Manager.cs" />
     <Compile Include="Dto\Organization.cs" />

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CRM.Model.Interfaces;
 using CRM.Inf.RepositoryFiles;
+using CRM.Inf.RepositoryFiles.RepositoryEntity;
 
 namespace CRM.Inf
 {
