@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CRM.App\CRM.App.csproj">
+      <Project>{c7da528d-1128-4c69-91a3-cc15029c69da}</Project>
+      <Name>CRM.App</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CRM.Data\CRM.Data.csproj">
       <Project>{e0d86e59-bee5-4d0e-8673-ef0329bcef5f}</Project>
       <Name>CRM.Data</Name>

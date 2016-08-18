@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CRM.Data.Dto;
+using CRM.Model.Domain;
 
-namespace CRM.Model.Domain
+namespace CRM.Model.Interfaces.Service
 {
-    public class Manager
+    public interface IServiceTakeQuery
     {
-        public string Name { get; set; }
-        public string Role { get; set; }
+        void ChoiseMethod(object[] messArg);
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using CRM.Data.Dto;
 
-namespace CRM.Model.Domain
+namespace CRM.Model.Interfaces.Service
 {
-    public class Manager
+    public interface IServiceStatuses
     {
-        public string Name { get; set; }
-        public string Role { get; set; }
+        void MakeStatus(string status, Dto obj);
+        void PushStatuses();
     }
 }
