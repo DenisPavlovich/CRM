@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Model.Interfaces
 {
-    public interface IBroMessagerMQ
+    public interface IBroMessagerMq
     {
         void Connection();
         void Publish(string message, string routKey);

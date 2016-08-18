@@ -17,38 +17,39 @@ namespace CRM.Inf
             Message = message;
         }
     }
-    public class MQBro : IBroMessagerMQ
+    public class MqBro : IBroMessagerMq
     {
-        private const string HOST_NAME = "localhost";
-        private const string ROUTING_KEY_SEND = "c.s";
-        private const string ROUTING_KEY_RECEIVED = "c.q";
+        private const string HostName = "localhost";
+        private const string ROUTING_KEY_CS = "c.s";
+        private const string ROUTING_KEY_CQ = "c.q";
 
-        private ConnectionFactory factory;
-        private IConnection connection;
-        private IModel channel;
+        private ConnectionFactory _factory;
+        private IConnection _connection;
+        private IModel _channel;
+        private EventingBasicConsumer _consumer;
 
         public delegate void MessageEventHandler(object sender, MessageEventArgs e);
 
         public event MessageEventHandler MessageReceived;
 
-        public MQBro(string host = HOST_NAME)
+        public MqBro(string host = HostName)
         {
-            factory = new ConnectionFactory(){HostName = host};
+            _factory = new ConnectionFactory(){HostName = host};
         }
 
         public void Connection()
         {
-            connection = factory.CreateConnection();
+            _connection = _factory.CreateConnection();
         }
 
-        public void Publish(string message, string routKey = ROUTING_KEY_SEND)
+        public void Publish(string message, string routKey = ROUTING_KEY_CS)
         {
-            if (connection == null)
+            if (_connection == null)
                 throw new NullReferenceException();
-            if (channel == null)
-                channel = connection.CreateModel();
+            if (_channel == null)
+                _channel = _connection.CreateModel();
 
-            channel.QueueDeclare(queue: routKey,
+            _channel.QueueDeclare(queue: routKey,
                                  durable: false,
                                  exclusive: false,
                                  autoDelete: false,
@@ -56,7 +57,7 @@ namespace CRM.Inf
 
             var body = Encoding.UTF8.GetBytes(message);
 
-            channel.BasicPublish(exchange: "",
+            _channel.BasicPublish(exchange: "",
                                  routingKey: routKey,
                                  basicProperties: null,
                                  body: body);
@@ -67,33 +68,34 @@ namespace CRM.Inf
 
         public void Disconnection()
         {
-            connection.Close();
+            _connection.Close();
         }
 
-        public void Received(string routKey = ROUTING_KEY_RECEIVED)
+        public void Received(string routKey = ROUTING_KEY_CQ)
         {
-            if (connection == null)
+            if (_connection == null)
                 throw new NullReferenceException();
-            if (channel == null)
-                channel = connection.CreateModel();
+            if (_channel == null)
+                _channel = _connection.CreateModel();
+            if (_consumer == null)
+                _consumer = new EventingBasicConsumer(_channel);
 
-            channel.QueueDeclare(queue: routKey,
+            _channel.QueueDeclare(queue: routKey,
                                  durable: false,
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
 
-            var consumer = new EventingBasicConsumer(channel);
-            consumer.Received += (model, ea) =>
+            _consumer.Received += (model, ea) =>
             {
                 var message = Encoding.UTF8.GetString(ea.Body);
                 if (MessageReceived != null)
                     MessageReceived(this,new MessageEventArgs(message));
             };
 
-            channel.BasicConsume(queue: routKey,
+            _channel.BasicConsume(queue: routKey,
                                  noAck: true,
-                                 consumer: consumer);
+                                 consumer: _consumer);
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using CRM.Data.Dto;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CRM.Model
 {
@@ -14,27 +17,30 @@ namespace CRM.Model
     }
     public class JsonParser
     {
-        public MethodType method;
-        public Dto obj;
-        private JsonParser(Dto obj, MethodType method)
+        public MethodType Method;
+        public Organization Obj;
+        public JsonParser(Organization obj, MethodType method)
         {
-            this.method = method;
-            this.obj = obj;
+            Obj = (Organization) obj;
+            Method = method;
         }
-        public static string Serialize(Dto obj, MethodType method)
+        public static string Serialize(JsonParser jp)
         {
-            return JsonConvert.SerializeObject(new JsonParser(obj, method));
+            return JsonConvert.SerializeObject(jp);
         }
-        public static object[] Deserialize(string json)
+        public static JsonParser Deserialize(string json)
         {
-            JsonParser jp = JsonConvert.DeserializeObject<JsonParser>(json);
-            object[] args = { jp.method, jp.obj };
-            return args;
+            return JsonConvert.DeserializeObject<JsonParser>(json);
         }
 
         public static string BasicSerialize(object obj)
         {
             return JsonConvert.SerializeObject(obj);
+        }
+
+        public static T BasicDeserialize<T>(string str)
+        {
+            return JsonConvert.DeserializeObject<T>(str);
         }
     }
 }

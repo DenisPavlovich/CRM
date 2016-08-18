@@ -10,7 +10,6 @@ CRM.App/bin
 CRM.App/obj
 CRM.App/App.config
 CRM.App/packages.config
-CRM.App/CRM.App.csproj
 
 CRM.Model/bin
 CRM.Model/obj
@@ -18,5 +17,11 @@ CRM.Model/csproj
 
 CRM/bin
 CRM/obj
+
+ClientProducer/bin
+ClientProducer/obj
+
+StatusToFileProducer/bin
+StatusToFileProducer/obj
 
 CRM/CRM.csproj.user

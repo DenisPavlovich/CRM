@@ -10,6 +10,6 @@ namespace CRM.Model.Interfaces.Service
 {
     public interface IServiceTakeQuery
     {
-        void ChoiseMethod(object[] messArg);
+        void ChoiseMethod(Dto messArg, MethodType addClient);
     }
 }
